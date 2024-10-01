@@ -42,9 +42,9 @@ from bot.plugins.status_message_fn import (
 from bot.commands import Command
 from bot.plugins.call_back_button_handler import button
 sudo_users = "760067286" 
-crf.append("24")
+crf.append("28")
 codec.append("libx264")
-resolution.append("1920x1080")
+resolution.append("854x480")
 preset.append("veryfast")
 audio_b.append("35k")
 # 🤣
@@ -95,21 +95,21 @@ if __name__ == "__main__" :
             crf.insert(0, f"{cr}")
             await message.reply_text(OUT)
         else:
-            await message.reply_text("Can Only be Used by Admins 👀\n\n Contact: @Not_Xenov")
+            await message.reply_text("Can Only be Used by Admins 👀\n\n Contact: @ShadowKakashi")
             
     @app.on_message(filters.incoming & filters.command(["settings", f"settings@{BOT_USERNAME}"]))
     async def settings(app, message):
         if message.from_user.id in AUTH_USERS:
             await message.reply_text(f"The current settings will be added to your video file :\n\nCodec : {codec[0]} \nCrf : {crf[0]} \nResolution : {resolution[0]} \nPreset : {preset[0]} \nAudio Bitrates : {audio_b[0]}")
         else:
-            await message.reply_text("Can Only be Used by Admins 👀\n\n Contact: @Not_Xenov")
+            await message.reply_text("Can Only be Used by Admins 👀\n\n Contact: @ShadowKakashi")
 
     @app.on_message(filters.incoming & filters.command(["sysinfo", f"sysinfo@{BOT_USERNAME}"]))
     async def help_message(app, message):
        if message.from_user.id in AUTH_USERS:
            await sysinfo(message)
        else:
-           await message.reply_text("Can Only be Used by Admins 👀\n\n Contact: @Not_Xenov")
+           await message.reply_text("Can Only be Used by Admins 👀\n\n Contact: @ShadowKakashi")
                
     @app.on_message(filters.incoming & filters.command(["resolution", f"resolution@{BOT_USERNAME}"]))
     async def changer(app, message):
@@ -119,7 +119,7 @@ if __name__ == "__main__" :
             resolution.insert(0, f"{r}")
             await message.reply_text(OUT)
         else:
-            await message.reply_text("Can Only be Used by Admins 👀\n\n Contact: @Not_Xenov")
+            await message.reply_text("Can Only be Used by Admins 👀\n\n Contact: @ShadowKakashi")
 
             
                
@@ -131,7 +131,7 @@ if __name__ == "__main__" :
             preset.insert(0, f"{pop}")
             await message.reply_text(OUT)
         else:
-            await message.reply_text("Can Only be Used by Admins 👀\n\n Contact: @Not_Xenov")
+            await message.reply_text("Can Only be Used by Admins 👀\n\n Contact: @ShadowKakashi")
 
             
     @app.on_message(filters.incoming & filters.command(["codec", f"codec@{BOT_USERNAME}"]))
@@ -142,7 +142,7 @@ if __name__ == "__main__" :
             codec.insert(0, f"{col}")
             await message.reply_text(OUT)
         else:
-            await message.reply_text("Can Only be Used by Admins 👀\n\n Contact: @Not_Xenov")
+            await message.reply_text("Can Only be Used by Admins 👀\n\n Contact: @ShadowKakashi")
              
     @app.on_message(filters.incoming & filters.command(["audio", f"audio@{BOT_USERNAME}"]))
     async def changea(app, message):
@@ -152,13 +152,13 @@ if __name__ == "__main__" :
             audio_b.insert(0, f"{aud}")
             await message.reply_text(OUT)
         else:
-            await message.reply_text("Can Only be Used by Admins 👀\n\n Contact: @Not_Xenov")
+            await message.reply_text("Can Only be Used by Admins 👀\n\n Contact: @ShadowKakashi")
             
         
     @app.on_message(filters.incoming & filters.command(["compress", f"compress@{BOT_USERNAME}"]))
     async def help_message(app, message):
         if message.chat.id not in AUTH_USERS:
-            return await message.reply_text("You are not authorised to use this bot contact @Not_Xenov")
+            return await message.reply_text("You are not authorised to use this bot contact @ShadowKakashi")
         query = await message.reply_text("File Added to Queue ⏰...\n\nPlease be patient, Encode will start soon", quote=True)
         data.append(message.reply_to_message)
         if len(data) == 1:
@@ -171,20 +171,20 @@ if __name__ == "__main__" :
             await message.reply_text("Restarting... 💀/n/n~ Expected Time: 1-2 Mins")
             quit(1)
         else:
-            await message.reply_text("Can Only be Used by Admins 👀\n\n Contact: @Not_Xenov")
+            await message.reply_text("Can Only be Used by Admins 👀\n\n Contact: @ShadowKakashi")
             
     @app.on_message(filters.incoming & filters.command(["clear", f"clear@{BOT_USERNAME}"]))
     async def restarter(app, message):
         if message.from_user.id in AUTH_USERS:
             await message.reply_text("Successfully cleared Queued Files...")
         else:
-            await message.reply_text("Can Only be Used by Admins 👀\n\n Contact: @Not_Xenov")
+            await message.reply_text("Can Only be Used by Admins 👀\n\n Contact: @ShadowKakashi")
          
         
     @app.on_message(filters.incoming & (filters.video | filters.document))
     async def help_message(app, message):
         if message.chat.id not in AUTH_USERS:
-            return await message.reply_text("You are not authorised to use this bot\n\nContact @Not_Xenov for Access")
+            return await message.reply_text("You are not authorised to use this bot\n\nContact @ShadowKakashi for Access")
         query = await message.reply_text("File Added to Queue ⏰...\n\nPlease be patient, Encode will start soon", quote=True)
         data.append(message)
         if len(data) == 1:
@@ -194,7 +194,7 @@ if __name__ == "__main__" :
     @app.on_message(filters.incoming & (filters.photo))
     async def help_message(app, message):
         if message.chat.id not in AUTH_USERS:
-            return await message.reply_text("You are not authorised to use this bot\n\nContact @Not_Xenov for Access")
+            return await message.reply_text("You are not authorised to use this bot\n\nContact @ShadowKakashi for Access")
         os.system('rm thumb.jpg')
         await message.download(file_name='/app/thumb.jpg')
         await message.reply_text('Thumbnail Added 👾')
